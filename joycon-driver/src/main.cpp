@@ -571,6 +571,7 @@ int acquirevJoyDevice(int deviceID) {
 	} else {
 		printf("Acquired device number %d - OK\n", deviceID);
 	}
+	return 0;
 }
 
 
