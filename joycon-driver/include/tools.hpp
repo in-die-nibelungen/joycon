@@ -133,9 +133,11 @@ std::map<std::string, std::string> LoadConfig(std::string filename)
 void setupConsole(std::string title) {
 	// setup console
 	AllocConsole();
-	freopen("conin$", "r", stdin);
-	freopen("conout$", "w", stdout);
-	freopen("conout$", "w", stderr);
+	int error = 0;
+	FILE* _fh = nullptr;
+	error = freopen_s(&_fh, "conin$", "r", stdin);
+	error = freopen_s(&_fh, "conout$", "w", stdout);
+	error = freopen_s(&_fh, "conout$", "w", stderr);
 	printf("Debugging Window:\n");
 }
 
@@ -341,7 +343,10 @@ int _floor(float n) {
 //}
 
 inline bool exists_test0(const std::string& name) {
-	if (FILE *file = fopen(name.c_str(), "r")) {
+	FILE* file = nullptr;
+	const auto err = fopen_s(&file, name.c_str(), "r");
+	if (err != 0)
+	{
 		fclose(file);
 		return true;
 	} else {
@@ -376,14 +381,16 @@ std::string get_time(std::chrono::time_point<T> time) {
 }
 
 
-void download(char outfilename[FILENAME_MAX], char *url) {
-
+void download(char outfilename[FILENAME_MAX], char *url)
+{
+#if 0
 	CURL *curl;
 	FILE *fp;
 	CURLcode res;
 
 	curl = curl_easy_init();
-	if (curl) {
+	if (curl)
+	{
 		fp = fopen(outfilename, "wb");
 		curl_easy_setopt(curl, CURLOPT_URL, url);
 		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, NULL);
@@ -392,5 +399,5 @@ void download(char outfilename[FILENAME_MAX], char *url) {
 		curl_easy_cleanup(curl);
 		fclose(fp);
 	}
-
+#endif
 }

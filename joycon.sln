@@ -1,9 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26206.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "joycon-driver", "joycon-driver\joycon-driver.vcxproj", "{EDC0440C-F596-4709-A091-EE8C8A365018}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5818A390-B6C4-441B-97DC-BC3AA254B1BD} = {5818A390-B6C4-441B-97DC-BC3AA254B1BD}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JoyconClient", "JoyconClient\JoyconClient.vcxproj", "{5818A390-B6C4-441B-97DC-BC3AA254B1BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +26,19 @@ Global
 		{EDC0440C-F596-4709-A091-EE8C8A365018}.Release|x64.Build.0 = Release|x64
 		{EDC0440C-F596-4709-A091-EE8C8A365018}.Release|x86.ActiveCfg = Release|Win32
 		{EDC0440C-F596-4709-A091-EE8C8A365018}.Release|x86.Build.0 = Release|Win32
+		{5818A390-B6C4-441B-97DC-BC3AA254B1BD}.Debug|x64.ActiveCfg = Debug|x64
+		{5818A390-B6C4-441B-97DC-BC3AA254B1BD}.Debug|x64.Build.0 = Debug|x64
+		{5818A390-B6C4-441B-97DC-BC3AA254B1BD}.Debug|x86.ActiveCfg = Debug|Win32
+		{5818A390-B6C4-441B-97DC-BC3AA254B1BD}.Debug|x86.Build.0 = Debug|Win32
+		{5818A390-B6C4-441B-97DC-BC3AA254B1BD}.Release|x64.ActiveCfg = Release|x64
+		{5818A390-B6C4-441B-97DC-BC3AA254B1BD}.Release|x64.Build.0 = Release|x64
+		{5818A390-B6C4-441B-97DC-BC3AA254B1BD}.Release|x86.ActiveCfg = Release|Win32
+		{5818A390-B6C4-441B-97DC-BC3AA254B1BD}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DFFED8DE-35D5-4D09-A2E2-A8D14942C4BF}
 	EndGlobalSection
 EndGlobal

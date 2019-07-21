@@ -216,8 +216,11 @@ public:
 		this->handle = hid_open_path(dev->path);
 
 
-		if (this->handle == nullptr) {
-			printf("Could not open serial %ls: %s\n", this->serial, strerror(errno));
+		if (this->handle == nullptr)
+		{
+			char msg[128];
+			strerror_s(msg, 128, errno);
+			printf("Could not open serial %ls: %s\n", this->serial, msg);
 			throw;
 		}
 	}
