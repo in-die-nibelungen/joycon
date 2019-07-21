@@ -1,0 +1,6 @@
+[submodule "externals/vJoy"]
+	path = externals/vJoy
+	url = https://github.com/shauleiz/vJoy.git
+[submodule "externals/hidapi"]
+	path = externals/hidapi
+	url = https://github.com/signal11/hidapi.git
